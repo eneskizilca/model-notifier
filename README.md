@@ -16,11 +16,11 @@ CLI tabanlı LLM araçları cevabını bitirince macOS bildirimi atar.
 ## Kurulum
 
 ```bash
-git clone https://github.com/eneskizilca/llm-notifier
-cd llm-notifier
+git clone https://github.com/eneskizilca/model-notifier
+cd model-notifier
 go mod tidy
-go build -o llm-notifier .
-./llm-notifier
+go build -o model-notifier .
+./model-notifier
 ```
 
 ## Aider için proje dizini ayarı
@@ -38,10 +38,10 @@ Log izleme yerine Codex'in kendi notify mekanizmasını kullanmak için
 
 ```toml
 [notify]
-program = "/path/to/llm-notifier-notify"
+program = "/path/to/model-notifier-notify"
 ```
 
-Ardından ayrı bir `llm-notifier-notify` binary derle:
+Ardından ayrı bir `model-notifier-notify` binary derle:
 
 ```go
 // notify-helper/main.go
@@ -49,7 +49,7 @@ package main
 import ("os/exec"; "fmt")
 func main() {
     exec.Command("osascript", "-e",
-        `display notification "Codex cevabı tamamladı!" with title "LLM Notifier" sound name "Glass"`).Run()
+        `display notification "Codex cevabı tamamladı!" with title "Model Notifier" sound name "Glass"`).Run()
 }
 ```
 
@@ -60,7 +60,7 @@ func main() {
 ```json
 {
   "hooks": {
-    "Stop": [{"matcher": "", "hooks": [{"type": "command", "command": "/path/to/llm-notifier-notify"}]}]
+    "Stop": [{"matcher": "", "hooks": [{"type": "command", "command": "/path/to/model-notifier-notify"}]}]
   }
 }
 ```
