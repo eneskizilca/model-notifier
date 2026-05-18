@@ -1,6 +1,9 @@
 # LLM Notifier
 
 CLI tabanlı LLM araçları cevabını bitirince macOS bildirimi atar.
+🔊 a tool that sends a desktop notification when the responses of language models embedded in IDEs or run through the terminal are completed
+
+<img width="339" height="54" alt="model-notifier-example" src="https://github.com/user-attachments/assets/67752ec4-bd89-4e26-b7e5-59684d05af71" />
 
 ## Desteklenen araçlar
 
